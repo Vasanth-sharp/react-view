@@ -1,0 +1,7 @@
+.outer-container{
+    margin:50px 25px;
+}
+.float-end{
+    display: flex;
+    justify-content: flex-end;
+}
