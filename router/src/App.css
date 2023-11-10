@@ -1,0 +1,8 @@
+body{
+  text-align: center;
+}
+
+ul{
+  display: flex;
+  justify-content: space-evenly;
+}
