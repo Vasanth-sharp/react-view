@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Cinzel+Decorative:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap');
+
+body{
+    background-color:azure;
+    display: flex;
+    justify-content: center;
+    background-color: aliceblue;
+}
+h1{
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel Decorative', cursive;
+    margin-top: 45px;
+    color: black;
+    font-weight: lighter;
+    text-shadow: 6px 4px 10px red;
+}
+.container{
+    position: absolute;
+    top:80px;
+    width: 400px;
+    height: 350px;
+    background-color: rgba(255, 165, 0,.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    box-shadow: 0px 0px 25px black;
+    position: relative;
+}
+h3{
+    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 25px;
+    color: red;
+    text-shadow: 0px 0px 16px royalblue;
+}
+.range{
+    width: 75%;
+    height: 4px;
+    margin:3px 0px;
+}
+label{
+    font-family: 'Cinzel', serif;
+    font-size: 19px;
+    text-shadow: 0px 0px 16px purple;
+}
+.input{
+    padding: 9px;
+    border-radius: 8px;
+    width: 40%;
+    border: none;
+    box-shadow: 0px 0px 10px orangered;
+    text-align: center;
+}
+.inputs{
+    padding: 9px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0px 0px 10px orangered;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    text-align: center;
+}
+input:focus{
+    outline: none;
+}
+
+button{
+    padding: 9px;
+    width: 30%;
+    border-radius: 9px;
+    border: none;
+    background-color: skyblue;
+    box-shadow: 0px 0px 10px blue ;
+    font-family: 'Cinzel', serif;
+    font-weight: bolder;
+    margin:10px 0px ;
+}
+a{
+    position: absolute;
+    left:320px;
+    top:320px;
+    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel Decorative', cursive;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: light;
+    color: black;
+    text-shadow: 0px 0px 25px purple;
+    transition: transform 600ms;
+}
+input:focus{
+    box-shadow: 0px 0px 10px skyblue;
+}
+
+button:hover{
+    box-shadow: 0px 0px 10px red;
+}
+a:hover{
+    transform: scale(1.3);
+    text-shadow: 0px 0px 16px red;
+    color: blue;
+}
+#result{
+    margin: 20px;
+    font-size: 25px;
+    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel Decorative', cursive;
+    font-weight: light;
+    text-shadow: 2px 4px 4px red;
+}
