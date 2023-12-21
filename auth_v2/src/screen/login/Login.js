@@ -38,14 +38,14 @@ export default function Login() {
     if (jsonResponse) {
       setLoading(false);
       if (jsonResponse.name === name && jsonResponse.password === password) {
-        toast.success("authenticted");
+        toast.success("Logged in");
         setTimeout(() => navigate(`/home/${encryptedName}`), 2000);
       } else {
-        toast.warning("not good");
+        toast.warning("Invalid password");
       }
     } else {
       setLoading(false);
-      toast.warning("Check your username");
+      toast.warning("Invalid username");
     }
   };
 
