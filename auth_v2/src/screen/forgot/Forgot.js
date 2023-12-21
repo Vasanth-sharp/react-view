@@ -41,10 +41,10 @@ export default function Forgot() {
     }).then((res) => {
       if (res.status === 200) {
         setLoading(false);
-        toast.success("otp sent");
+        toast.success("Sent");
       } else {
         setLoading(false);
-        toast.warning("otp failed");
+        toast.warning("Fail");
       }
     });
     setSendedotp(otpData.otp);
@@ -69,15 +69,15 @@ export default function Forgot() {
       const putResponse = putCall.json();
       if (putResponse) {
         setLoading(false);
-        toast.success("good");
+        toast.success("Updated");
         setTimeout(() => navigate("/login"), 2000);
       } else {
         setLoading(false);
-        toast.warning("server");
+        toast.warning("Server side error");
       }
     } else {
       setLoading(false);
-      toast.warning("Otp is wrong");
+      toast.warning("Invalid otp");
     }
   };
   return (
