@@ -34,17 +34,17 @@ export default function Signin() {
       } else {
         setLoading(true);
 
-        fetch("http://localhost:4000/api/create", {
-          method: "POST",
-          body: JSON.stringify({
-            name:name.trim(),
-            password:password,
-            email:email
-          }),
-          headers: {
-            "Content-type": "application/json; charset=UTF-8",
-          },
-        })
+        // fetch("http://localhost:4000/api/create", {
+        //   method: "POST",
+        //   body: JSON.stringify({
+        //     name:name.trim(),
+        //     password:password,
+        //     email:email
+        //   }),
+        //   headers: {
+        //     "Content-type": "application/json; charset=UTF-8",
+        //   },
+        // })
         
         fetch("https://authentication-api-x1bi.onrender.com/api", {
           method: "POST",
