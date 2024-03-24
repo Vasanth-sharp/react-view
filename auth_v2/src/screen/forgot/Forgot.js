@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import Loader from "react-spinner-loader";
 
+
 export default function Forgot() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
