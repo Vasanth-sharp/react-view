@@ -33,19 +33,22 @@ export default function Signin() {
         toast.warning("use different username");
       } else {
         setLoading(true);
-
-        // fetch("http://localhost:4000/api/create", {
-        //   method: "POST",
-        //   body: JSON.stringify({
-        //     name:name.trim(),
-        //     password:password,
-        //     email:email
-        //   }),
-        //   headers: {
-        //     "Content-type": "application/json; charset=UTF-8",
-        //   },
-        // })
         
+        
+        fetch("https://inte-gem.onrender.com/api/create", {
+          method: "POST",
+          body: JSON.stringify({
+            name:name.trim(),
+            password:password,
+            email:email
+          }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        })
+
+
+
         fetch("https://authentication-api-x1bi.onrender.com/api", {
           method: "POST",
           body: JSON.stringify(data),
@@ -55,7 +58,7 @@ export default function Signin() {
         }).then((res) => {
           setLoading(false);
           if (res.status === 200) {
-            toast.success("Signed in");
+            toast.success("good");
             setTimeout(() => navigate("/login"), 2000);
           }
         });
