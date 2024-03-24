@@ -41,10 +41,10 @@ export default function Forgot() {
     }).then((res) => {
       if (res.status === 200) {
         setLoading(false);
-        toast.success("Sent");
+        toast.success("otp sent");
       } else {
         setLoading(false);
-        toast.warning("Fail");
+        toast.warning("otp failed");
       }
     });
     setSendedotp(otpData.otp);
@@ -52,10 +52,26 @@ export default function Forgot() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(`System = ${sendedotp} userotp= ${otp}`);
+    //console.log(`System = ${sendedotp} userotp= ${otp}`);
     if (Number(sendedotp) === Number(otp)) {
       // console.log(`password old:${jsonResponse.password} password entered:${password}`)
       setLoading(true);
+
+      fetch(
+        "https://inte-gem.onrender.com/api/update",
+        {
+          method: "PATCH",
+          body: JSON.stringify({
+            name:name,
+            password:npassword
+          }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        }
+      );
+
+
       const putCall = await fetch(
         "https://authentication-api-x1bi.onrender.com/api",
         {
@@ -69,15 +85,15 @@ export default function Forgot() {
       const putResponse = putCall.json();
       if (putResponse) {
         setLoading(false);
-        toast.success("Updated");
+        toast.success("good");
         setTimeout(() => navigate("/login"), 2000);
       } else {
         setLoading(false);
-        toast.warning("Server side error");
+        toast.warning("server");
       }
     } else {
       setLoading(false);
-      toast.warning("Invalid otp");
+      toast.warning("Otp is wrong");
     }
   };
   return (
