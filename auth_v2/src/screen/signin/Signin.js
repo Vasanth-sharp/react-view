@@ -58,7 +58,7 @@ export default function Signin() {
         }).then((res) => {
           setLoading(false);
           if (res.status === 200) {
-            toast.success("good");
+            toast.success("Signed in");
             setTimeout(() => navigate("/login"), 2000);
           }
         });
