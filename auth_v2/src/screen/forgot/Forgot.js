@@ -85,7 +85,7 @@ export default function Forgot() {
       const putResponse = putCall.json();
       if (putResponse) {
         setLoading(false);
-        toast.success("good");
+        toast.success("Updated..");
         setTimeout(() => navigate("/login"), 2000);
       } else {
         setLoading(false);
@@ -93,7 +93,7 @@ export default function Forgot() {
       }
     } else {
       setLoading(false);
-      toast.warning("Otp is wrong");
+      toast.warning("Invalid OTP");
     }
   };
   return (
