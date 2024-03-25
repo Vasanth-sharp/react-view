@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 export default function Welcome() {
   useEffect(() => {
     fetch("https://inte-gem.onrender.com/api");
+fetch("https://authentication-api-x1bi.onrender.com/api");
   }, []); //STARTUP CALL
 
   return (
