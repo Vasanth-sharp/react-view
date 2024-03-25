@@ -44,8 +44,18 @@ export default function Vision() {
         }
       );
       setLoading(false);
-      const result = await response.json();
-      setPromptResult(result);
+
+      if (response.status === 400) {
+        toast.error("Harmful request blocked");
+        setPromptResult("Sorry, your prompt or image may contain harmful content due to safety reasons. It has been neglected by Inte-Gem. Please use some other picture or prompt")
+      } else if(response.status===413){
+        toast.error("Image got rejected")
+        setPromptResult("Sorry, due to some reason it rejected by inte-gem")
+      }else {
+        const result = await response.json();
+
+        setPromptResult(result);
+      }
     } catch (err) {
       console.log(err);
     }
@@ -113,7 +123,7 @@ export default function Vision() {
           Submit
         </button>
       </form>
-
+      {loading? <Skeleton /> : <TextArea prompt={promptresult} />}
       {file && (
         <div className="mt-8 border rounded-lg shadow-md p-4 bg-white mb-5">
           <p className="text-lg font-semibold text-blue-500 mb-2">
@@ -131,14 +141,13 @@ export default function Vision() {
           />
         </div>
       )}
-      {loading ? <Skeleton /> : <TextArea prompt={promptresult} />}
       <div className="flex justify-end">
-      <button
-        onClick={() => navigate("/home", { state: { name } })}
-        className="mt-4 bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-      >
-        Back
-      </button>
+        <button
+          onClick={() => navigate("/home", { state: { name } })}
+          className="mt-4 bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        >
+          Back
+        </button>
       </div>
     </div>
   );
