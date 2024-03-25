@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Skeleton from "../components/Skeleton";
 import TextArea from "../components/TextArea";
+import { toast } from "react-toastify";
 
 export default function Chat() {
   const navigate = useNavigate();
@@ -30,11 +31,17 @@ export default function Chat() {
         },
       });
       setLoading(false)
+      if(response.status===400){
+        toast.error("Harmful request blocked");
+        setPromptResult("Sorry, your prompt may contain harmful content, due to safety reasons it has been neglected by Inte-Gem. Please use some other prompt")
+      }
+      else{
       const result = await response.json();
       // result.replace(/\n/g,'\n');
       // result1.replace(/\n\n/g,'\n\n');
       setPromptResult(result);
       // console.log(result);
+      }
     } catch (err) {
       console.log(err);
     }
