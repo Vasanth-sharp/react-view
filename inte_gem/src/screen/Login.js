@@ -32,7 +32,7 @@ export default function Login() {
         const result = await response.json();
         sessionStorage.setItem("token", JSON.stringify(result.token));
         toast.success("ready to rock");
-        setTimeout(() => navigate("/home", { state: { name: name } }), 2000);
+        setTimeout(() => navigate("/home", { state: { name: name } }), 1000);
       }
     } catch (err) {
       setLoading(false);
