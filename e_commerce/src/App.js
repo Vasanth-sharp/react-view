@@ -11,7 +11,6 @@ import "react-toastify/dist/ReactToastify.css";
 import MoreAbout from "./screens/MoreAbout";
 import User from "./screens/User";
 import ErrorPage from "./screens/ErrorPage";
-import About from "./screens/About";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -25,7 +24,6 @@ function App() {
           <Route path="/" element={<Welcome />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/about" element={<About/>}/>
           <Route element={<AuthUser />}>
             <Route path="/home" element={<Home />} />
             <Route path="/more" element={<MoreAbout />} />
