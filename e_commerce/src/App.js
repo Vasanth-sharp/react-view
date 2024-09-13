@@ -11,6 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 import MoreAbout from "./screens/MoreAbout";
 import User from "./screens/User";
 import ErrorPage from "./screens/ErrorPage";
+import About from "./screens/About";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
