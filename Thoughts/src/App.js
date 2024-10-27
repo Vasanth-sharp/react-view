@@ -18,7 +18,6 @@ function App() {
         <Route path='/post/:id' element={<Postdetail/>}/>
         <Route path='/edit/:id' element={<Editpost/>}/>
       </Routes>
-      <Foot/>
       </BrowserRouter>
     </div>
   );
